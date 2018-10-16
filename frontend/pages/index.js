@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Items from '../components/items';
 
 const Home = props => (
     <div>
@@ -7,6 +8,7 @@ const Home = props => (
         <Link href={'/sell'}>
             <a>Sell</a>
         </Link>
+        <Items />
     </div>
 );
 

@@ -1,11 +1,3 @@
-import React from 'react';
+import Home from './index';
 
-const items = () => {
-    return (
-        <div>
-            {'Items'}
-        </div>
-    );
-};
-
-export default items;
+export default Home;
