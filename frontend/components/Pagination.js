@@ -21,7 +21,8 @@ const PAGINATION_QUERY = gql`
 
 const Pagination = props => {
     return (
-        <Query query={PAGINATION_QUERY}>
+        <Query query={PAGINATION_QUERY}
+        >
             {({ data, error, loading }) => {
                 if (loading) return <p>Loading</p>
                 const count = data.itemsConnection.aggregate.count;
