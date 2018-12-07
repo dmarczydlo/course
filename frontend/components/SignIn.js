@@ -3,9 +3,10 @@ import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import Form from './styles/Form';
 import Error from './ErrorMessage';
+import { CURRENT_USER_QUERY } from './User';
 
-const SING_IN_MUTATION = gql`
-    mutation SING_IN_MUTATION ($email: String!, $password: String!){
+const SIGN_IN_MUTATION = gql`
+    mutation SIGN_IN_MUTATION ($email: String!, $password: String!){
     signIn(email: $email, password: $password) {
         id
         email
@@ -25,7 +26,9 @@ class SignIn extends Component {
     }
     render() {
         return (
-            <Mutation mutation={SING_IN_MUTATION} variables={this.state}>
+            <Mutation mutation={SIGN_IN_MUTATION} variables={this.state}
+                refetchQueries={[{ query: CURRENT_USER_QUERY }]}
+            >
                 {(singIn, { error, loading }) => {
                     return (
                         <Form method="post" onSubmit={async e => {
