@@ -1,6 +1,7 @@
 import React from 'react';
 import SingUp from '../components/SignUp';
 import SingIn from '../components/SignIn';
+import Reset from '../components/RequestReset';
 import styled from 'styled-components';
 
 const Columns = styled.div`
@@ -14,6 +15,7 @@ const SignUpPage = props => (
     <Columns>
         <SingUp />
         <SingIn />
+        <Reset />
     </Columns>
 );
 
